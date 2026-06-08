@@ -77,13 +77,40 @@ function loadLevel() {
   momStatus.textContent = "❌";
   dadStatus.textContent = "❌";
 
-  for (let i = 1; i <= 8; i++) {
+  // vrstvy 1–3 jsou za zvířaty
+  for (let i = 1; i <= 3; i++) {
     const img = document.createElement("img");
     img.src = `images/${level.folder}/${i}.png`;
     img.className = "layer";
-    img.style.zIndex = i <= 3 ? i : 20 + i;
+    img.style.zIndex = i;
     layersDiv.appendChild(img);
   }
+
+  // zvířata
+  level.animals.forEach(animalData => {
+    const img = document.createElement("img");
+    img.src = `images/${level.folder}/${animalData.file}`;
+    img.className = "animal";
+    img.dataset.type = animalData.type;
+
+    img.style.left = animalData.left;
+    img.style.top = animalData.top;
+    img.style.width = animalData.width;
+    img.style.zIndex = 10;
+
+    img.addEventListener("click", () => findAnimal(img));
+    animalsDiv.appendChild(img);
+  });
+
+  // vrstvy 4–8 jsou před zvířaty
+  for (let i = 4; i <= 8; i++) {
+    const img = document.createElement("img");
+    img.src = `images/${level.folder}/${i}.png`;
+    img.className = "layer";
+    img.style.zIndex = 20 + i;
+    layersDiv.appendChild(img);
+  }
+}
 
   level.animals.forEach(animalData => {
     const img = document.createElement("img");
