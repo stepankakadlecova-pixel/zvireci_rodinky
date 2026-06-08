@@ -1,10 +1,10 @@
 let cubsLeft = 3;
 let momFound = false;
 let dadFound = false;
+let foundOrder = 0;
 
 const startScreen = document.getElementById("startScreen");
 const startBtn = document.getElementById("startBtn");
-
 const winScreen = document.getElementById("winScreen");
 
 const cubsLeftText = document.getElementById("cubsLeft");
@@ -19,7 +19,12 @@ document.querySelectorAll(".animal").forEach(animal => {
   animal.addEventListener("click", () => {
     if (animal.classList.contains("found")) return;
 
+    foundOrder++;
+
     animal.classList.add("found");
+
+    animal.style.right = `${20 + foundOrder * 80}px`;
+    animal.style.bottom = "20px";
 
     const type = animal.dataset.type;
 
@@ -46,6 +51,6 @@ function checkWin() {
   if (cubsLeft === 0 && momFound && dadFound) {
     setTimeout(() => {
       winScreen.style.display = "flex";
-    }, 500);
+    }, 1000);
   }
 }
