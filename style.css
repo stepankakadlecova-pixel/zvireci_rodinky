@@ -34,15 +34,14 @@ body {
 
 .animal.found {
   position: fixed !important;
-  left: auto !important;
   top: auto !important;
-  right: 20px !important;
+  left: auto !important;
   bottom: 20px !important;
-  width: 90px !important;
-  z-index: 2000 !important;
+  width: 85px !important;
+  z-index: 5000 !important;
   opacity: 1;
   filter: drop-shadow(0 0 15px gold);
-  transform: scale(1.25);
+  transform: scale(1.15);
   pointer-events: none;
 }
 
@@ -50,8 +49,8 @@ body {
   position: fixed;
   top: 15px;
   left: 15px;
-  z-index: 3000;
-  background: rgba(255,255,255,0.9);
+  z-index: 6000;
+  background: rgba(255,255,255,0.92);
   padding: 12px 16px;
   border-radius: 16px;
   font-size: 22px;
@@ -106,7 +105,7 @@ button {
 
 @media (max-width: 700px) {
   #panel {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   #bigNumber {
@@ -123,14 +122,5 @@ button {
 
   button {
     font-size: 22px;
-  }
-
-  .animal[data-type="dad"],
-  .animal[data-type="mom"] {
-    width: 85px !important;
-  }
-
-  .animal[data-type="cub"] {
-    width: 58px !important;
   }
 }
