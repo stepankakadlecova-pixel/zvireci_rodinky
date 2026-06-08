@@ -15,8 +15,7 @@ body {
   height: 100vh;
 }
 
-#layers,
-#animals {
+#scene {
   position: absolute;
   inset: 0;
 }
