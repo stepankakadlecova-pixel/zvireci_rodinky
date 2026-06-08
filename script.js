@@ -1,30 +1,28 @@
-let cubs = 4;
+let cubsLeft = 3;
 
 document.getElementById("startBtn").onclick = () => {
-    document.getElementById("intro").style.display = "none";
+    document.getElementById("startScreen").style.display = "none";
 };
 
-document.querySelectorAll(".animal").forEach(animal => {
+document.querySelectorAll(".cub").forEach(cub => {
 
-    animal.onclick = () => {
+    cub.onclick = () => {
 
-        if(animal.classList.contains("found")) return;
+        if(cub.classList.contains("found")) return;
 
-        animal.classList.add("found");
+        cub.classList.add("found");
 
-        if(animal.dataset.type === "cub"){
+        cubsLeft--;
 
-            cubs--;
+        document.getElementById("count").textContent = cubsLeft;
 
-            document.getElementById("count").textContent = cubs;
+        if(cubsLeft === 0){
 
-            if(cubs === 0){
+            setTimeout(() => {
 
-                setTimeout(() => {
-                    alert("🎉 Našla jsi všechna liščata!");
-                },300);
+                alert("🎉 Našla jsi všechna liščata!");
 
-            }
+            },300);
         }
     };
 });
