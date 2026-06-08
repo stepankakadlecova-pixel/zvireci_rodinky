@@ -1,28 +1,51 @@
 let cubsLeft = 3;
+let momFound = false;
+let dadFound = false;
 
-document.getElementById("startBtn").onclick = () => {
-    document.getElementById("startScreen").style.display = "none";
-};
+const startScreen = document.getElementById("startScreen");
+const startBtn = document.getElementById("startBtn");
 
-document.querySelectorAll(".cub").forEach(cub => {
+const winScreen = document.getElementById("winScreen");
 
-    cub.onclick = () => {
+const cubsLeftText = document.getElementById("cubsLeft");
+const momStatus = document.getElementById("momStatus");
+const dadStatus = document.getElementById("dadStatus");
 
-        if(cub.classList.contains("found")) return;
-
-        cub.classList.add("found");
-
-        cubsLeft--;
-
-        document.getElementById("count").textContent = cubsLeft;
-
-        if(cubsLeft === 0){
-
-            setTimeout(() => {
-
-                alert("🎉 Našla jsi všechna liščata!");
-
-            },300);
-        }
-    };
+startBtn.addEventListener("click", () => {
+  startScreen.style.display = "none";
 });
+
+document.querySelectorAll(".animal").forEach(animal => {
+  animal.addEventListener("click", () => {
+    if (animal.classList.contains("found")) return;
+
+    animal.classList.add("found");
+
+    const type = animal.dataset.type;
+
+    if (type === "cub") {
+      cubsLeft--;
+      cubsLeftText.textContent = cubsLeft;
+    }
+
+    if (type === "mom") {
+      momFound = true;
+      momStatus.textContent = "✅";
+    }
+
+    if (type === "dad") {
+      dadFound = true;
+      dadStatus.textContent = "✅";
+    }
+
+    checkWin();
+  });
+});
+
+function checkWin() {
+  if (cubsLeft === 0 && momFound && dadFound) {
+    setTimeout(() => {
+      winScreen.style.display = "flex";
+    }, 500);
+  }
+}
