@@ -1,35 +1,71 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Najdi zvířecí rodinku</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Najdi rodinku</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="startScreen">
-  <div id="bigNumber">4</div>
-  <h1 id="startTitle">Najdi 4 liščata</h1>
-  <p id="startText">A potom najdi i lišku a lišáka.</p>
-  <button id="startBtn">Začít hledat</button>
+<div id="intro">
+    <div id="bigNumber">4</div>
+    <h1>Najdi 4 liščata</h1>
+    <button id="startBtn">Začít</button>
 </div>
 
 <div id="game">
-  <div id="scene"></div>
 
-  <div id="panel">
-    🐾 Mláďata: <span id="cubsLeft">0</span><br>
-    Maminka: <span id="momStatus">❌</span><br>
-    Tatínek: <span id="dadStatus">❌</span>
-  </div>
+    <!-- zadní vrstvy -->
+    <img src="images/liska/1.png" class="layer" style="z-index:1;">
+    <img src="images/liska/2.png" class="layer" style="z-index:2;">
+    <img src="images/liska/3.png" class="layer" style="z-index:3;">
+
+    <!-- zvířata -->
+    <img src="images/liska/lisak.png"
+         class="animal"
+         data-type="dad"
+         style="left:65%;top:50%;width:15%;z-index:10;">
+
+    <img src="images/liska/liska.png"
+         class="animal"
+         data-type="mom"
+         style="left:25%;top:55%;width:15%;z-index:10;">
+
+    <img src="images/liska/lisce1.png"
+         class="animal"
+         data-type="cub"
+         style="left:10%;top:70%;width:8%;z-index:10;">
+
+    <img src="images/liska/lisce2.png"
+         class="animal"
+         data-type="cub"
+         style="left:40%;top:68%;width:8%;z-index:10;">
+
+    <img src="images/liska/lisce3.png"
+         class="animal"
+         data-type="cub"
+         style="left:70%;top:72%;width:8%;z-index:10;">
+
+    <img src="images/liska/lisce4.png"
+         class="animal"
+         data-type="cub"
+         style="left:55%;top:78%;width:8%;z-index:10;">
+
+    <!-- přední vrstvy -->
+    <img src="images/liska/4.png" class="layer" style="z-index:20;">
+    <img src="images/liska/5.png" class="layer" style="z-index:21;">
+    <img src="images/liska/6.png" class="layer" style="z-index:22;">
+    <img src="images/liska/7.png" class="layer" style="z-index:23;">
+    <img src="images/liska/8.png" class="layer" style="z-index:24;">
+
 </div>
 
-<div id="winScreen">
-  <h1>🎉 Našla jsi celou rodinku!</h1>
-  <button id="nextBtn">Další rodinka</button>
+<div id="panel">
+🐾 Mláďata: <span id="count">4</span>
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
