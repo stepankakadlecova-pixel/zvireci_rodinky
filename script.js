@@ -6,12 +6,12 @@ const levels = [
     startTitle: "Najdi 4 liščata",
     startText: "A potom najdi i lišku a lišáka.",
     animals: [
-      { file: "lisak.png", type: "dad", left: "64%", top: "48%", width: "17%" },
-      { file: "liska.png", type: "mom", left: "23%", top: "54%", width: "16%" },
-      { file: "lisce1.png", type: "cub", left: "13%", top: "70%", width: "8%" },
-      { file: "lisce2.png", type: "cub", left: "43%", top: "66%", width: "8%" },
-      { file: "lisce3.png", type: "cub", left: "76%", top: "68%", width: "8%" },
-      { file: "lisce4.png", type: "cub", left: "55%", top: "75%", width: "8%" }
+      { file: "fox_dad.png", type: "dad", left: "64%", top: "48%", width: "17%" },
+      { file: "fox_mom.png", type: "mom", left: "23%", top: "54%", width: "16%" },
+      { file: "fox_cub1.png", type: "cub", left: "13%", top: "70%", width: "8%" },
+      { file: "fox_cub2.png", type: "cub", left: "43%", top: "66%", width: "8%" },
+      { file: "fox_cub2.png", type: "cub", left: "76%", top: "68%", width: "8%" },
+      { file: "fox_cub3.png", type: "cub", left: "55%", top: "75%", width: "8%" }
     ]
   }
 ];
