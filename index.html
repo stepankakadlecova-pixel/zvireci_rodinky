@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Najdi zvířecí rodinku</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="startScreen">
+  <div id="bigNumber">4</div>
+  <h1 id="startTitle">Najdi 4 liščata</h1>
+  <p id="startText">A potom najdi i lišku a lišáka.</p>
+  <button id="startBtn">Začít hledat</button>
+</div>
+
+<div id="game">
+  <div id="layers"></div>
+  <div id="animals"></div>
+
+  <div id="panel">
+    🐾 Mláďata: <span id="cubsLeft">0</span><br>
+    Maminka: <span id="momStatus">❌</span><br>
+    Tatínek: <span id="dadStatus">❌</span>
+  </div>
+</div>
+
+<div id="winScreen">
+  <h1>🎉 Našla jsi celou rodinku!</h1>
+  <button id="nextBtn">Další rodinka</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
